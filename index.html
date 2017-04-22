@@ -15,8 +15,7 @@
   }
 
   .test{
-    height: 100%;
-  min-height: 100%;
+   margin:10px;
   }
 
   
@@ -30,7 +29,7 @@
   
 
 </head>
-<body >
+<body ng-app="suriefyApp" ng-controller="suriefyController">
 
 <nav class="navbar navbar-inverse" id="nav">
   <div class="container-fluid">
@@ -59,16 +58,16 @@
   </div>
 </nav>
 
-<div ng-app="suriefyApp" ng-controller="suriefyController" class="test w3-container" style="background-image:url({{projectData[0].cover_image}})">
+<div   ng-repeat="data in projectData" class="test w3-container" style="background-image:url({{data.cover_image}})">
   <div class="w3-card-4" style="width:100%;">
     <div class="w3-container">
       <div class="content-div" ></div>
-        <p class="heading"><b>Artists-{{projectData[0].artists}}</b></p>
-        <p>Song-{{projectData[0].song}}</p>
+        <p class="heading"><b>Artists-{{data.artists}}</b></p>
+        <p>Song-{{data.song}}</p>
 
-        <audio controls>
-          <source ng-src={{projectData[0].url}} type="audio/ogg">
-        </audio>
+        <!-- <audio controls>
+          <source ng-src="{{projectData[0].url}}" type="audio/ogg">
+        </audio> -->
         <a class="arrow">></a>   
       </div>
     </div>
